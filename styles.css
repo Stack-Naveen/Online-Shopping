@@ -1,0 +1,18 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-grey: darkgrey;
+  --yellow: yellow;
+  --white: white;
+  --dark-slate-grey: darkslategray;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
