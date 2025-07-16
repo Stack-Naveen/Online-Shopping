@@ -1,27 +1,19 @@
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
   color: var(--white);
 }
-
+body {
+  background-color: rgb(219, 217, 214);
+}
 :root {
-  /*   --dark-grey: rgb(192, 21, 21); */
   --yellow: rgb(240, 240, 114);
   --white: white;
   --dark-slate-grey: darkslategrey;
 }
 
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 h1 {
   text-align: center;
-  margin-top: 10px;
 }
 
 h2 {
@@ -30,40 +22,48 @@ h2 {
 }
 #main {
   background-color: var(--dark-slate-grey);
-  width: 50%;
-  height: 100vh;
-  text-align: center;
+  max-width: 800px;
   margin: 20px auto;
   border-radius: 10px;
-  border-style: groove;
+  border: 1px solid rgb(140, 101, 230);
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgb(189, 189, 189);
 }
 #products-container {
   background-color: var(--dark-slate-grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
 }
 
 .product {
   background-color: var(--white);
   margin: 10px;
-  width: 100vh;
+  width: 750px;
   padding: 10px;
   border-radius: 10px;
   color: var(--dark-slate-grey);
   font-size: large;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.addBtn {
+button {
   padding: 10px;
   font-size: large;
   border-radius: 5px;
   border: none;
   background-color: rgb(98, 98, 198);
   color: var(--white);
+  cursor: pointer;
 }
-.addBtn:hover {
+button:hover {
   background-color: rgb(74, 74, 213);
   transition: 0.5s ease;
   transform: scale(1.05);
