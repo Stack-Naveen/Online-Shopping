@@ -53,11 +53,23 @@ function addToCart(id) {
   });
   console.log(productToAdd);
   myCart.push(productToAdd);
-  console.log(myCart);
+  renderCartDetails();
+}
+function renderCartDetails() {
+  cartContainer.innerHTML = "";
+  myCart.forEach((item) => {
+    const { id, name, price } = item;
+    cartContainer.insertAdjacentHTML(
+      "beforeend",
+      `<div class="product">${name} - Rs. ${price} <button onclick="removeFromCart(${id})">Remove</button></div>`
+    );
+  });
+}
 
-  const { id: productId, name, price } = productToAdd;
-  cartContainer.insertAdjacentHTML(
-    "beforeend",
-    `<div class="product">${name} - Rs. ${price} <button onclick="removeFromCart(${productId})">Remove</button></div>`
-  );
+function removeFromCart(id) {
+  const productIndex = myCart.findIndex((item) => {
+    return item.id === id;
+  });
+  myCart.splice(productIndex, 1);
+  renderCartDetails();
 }
