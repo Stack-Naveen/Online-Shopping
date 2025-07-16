@@ -1,4 +1,5 @@
 const productsContainer = document.getElementById("products-container");
+const cartContainer = document.getElementById("cart-container");
 
 const products = [
   {
@@ -33,6 +34,9 @@ products.forEach((product) => {
   productsContainer.insertAdjacentHTML(
     "beforeend",
 
-    `<div class="product">${name} - Rs. ${price} <button class="addBtn">Add to cart</button></div>`
+    `<div class="product">${name} - Rs. ${price} <button onclick="addToCart(${id})">Add to cart</button></div>`
   );
 });
+function addToCart(id) {
+  console.log("click working", id);
+}
