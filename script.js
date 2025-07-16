@@ -33,10 +33,31 @@ products.forEach((product) => {
   const { id, name, price } = product;
   productsContainer.insertAdjacentHTML(
     "beforeend",
-
     `<div class="product">${name} - Rs. ${price} <button onclick="addToCart(${id})">Add to cart</button></div>`
   );
 });
+const myCart = [];
 function addToCart(id) {
+  const isAvailable = myCart.some((product) => {
+    return product.id === id;
+  });
+  console.log(isAvailable);
+  if (isAvailable) {
+    alert(`Item already added`);
+    return;
+  }
+
   console.log("click working", id);
+  const productToAdd = products.find((item) => {
+    return item.id === id;
+  });
+  console.log(productToAdd);
+  myCart.push(productToAdd);
+  console.log(myCart);
+
+  const { id: productId, name, price } = productToAdd;
+  cartContainer.insertAdjacentHTML(
+    "beforeend",
+    `<div class="product">${name} - Rs. ${price} <button onclick="removeFromCart(${productId})">Remove</button></div>`
+  );
 }
