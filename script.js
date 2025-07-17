@@ -1,6 +1,8 @@
 const productsContainer = document.getElementById("products-container");
 const cartContainer = document.getElementById("cart-container");
 const countProducts = document.getElementById("countProducts");
+const sortProducts = document.getElementById("sort");
+const clearCart = document.getElementById("clear");
 
 const products = [
   {
@@ -78,3 +80,17 @@ function removeFromCart(id) {
   myCart.splice(productIndex, 1);
   renderCartDetails();
 }
+
+/* sortProducts.addEventListener("click", () => {}); */
+
+const check = clearCart.addEventListener("click", () => {
+  console.log("ok");
+
+  console.log(check);
+  renderCartDetails();
+});
+clearCart.addEventListener("click", () => {
+  console.log("check");
+  myCart.length = 0;
+  renderCartDetails();
+});
