@@ -44,17 +44,14 @@ function addToCart(id) {
   const isAvailable = myCart.some((product) => {
     return product.id === id;
   });
-  console.log(isAvailable);
   if (isAvailable) {
     alert(`Item already added`);
     return;
   }
 
-  console.log("click working", id);
   const productToAdd = products.find((item) => {
     return item.id === id;
   });
-  console.log(productToAdd);
   myCart.push(productToAdd);
   renderCartDetails();
 }
@@ -81,16 +78,17 @@ function removeFromCart(id) {
   renderCartDetails();
 }
 
-/* sortProducts.addEventListener("click", () => {}); */
-
-const check = clearCart.addEventListener("click", () => {
-  console.log("ok");
-
-  console.log(check);
+clearCart.addEventListener("click", () => {
   renderCartDetails();
 });
 clearCart.addEventListener("click", () => {
-  console.log("check");
   myCart.length = 0;
+  renderCartDetails();
+});
+
+sortProducts.addEventListener("click", () => {
+  myCart.sort((product1, product2) => {
+    return product1.price - product2.price;
+  });
   renderCartDetails();
 });
