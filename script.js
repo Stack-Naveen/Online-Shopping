@@ -1,5 +1,6 @@
 const productsContainer = document.getElementById("products-container");
 const cartContainer = document.getElementById("cart-container");
+const countProducts = document.getElementById("countProducts");
 
 const products = [
   {
@@ -64,6 +65,10 @@ function renderCartDetails() {
       `<div class="product">${name} - Rs. ${price} <button onclick="removeFromCart(${id})">Remove</button></div>`
     );
   });
+  const totalPrice = myCart.reduce((prev, current) => {
+    return prev + current.price;
+  }, 0);
+  countProducts.textContent = `Rs. ${totalPrice}`;
 }
 
 function removeFromCart(id) {
