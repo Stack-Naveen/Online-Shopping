@@ -69,7 +69,17 @@ button:hover {
   transition: 0.5s ease;
   transform: scale(1.05);
 }
-#countProducts{
+#countProducts {
   text-align: right;
   margin-right: 25px;
+}
+#feedback {
+  background-color: rgb(232, 130, 186);
+  position: fixed;
+  top: 100px;
+  right: 300px;
+  margin: auto;
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: none;
 }
