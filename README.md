@@ -14,7 +14,7 @@ It allows users to:
 
 ## 🚀 Live Demo
 
-👉 [Click here to view the deployed site](https://stack-naveen.github.io/online-shopping-cart/)
+👉 [Click here to view the deployed site](https://stack-naveen.github.io/Online-Shopping-Cart/)
 
 > Replace the link with your actual GitHub Pages URL after deployment.
 
